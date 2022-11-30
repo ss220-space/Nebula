@@ -3,7 +3,7 @@ var/global/list/latejoin_cryo_two = list()
 
 /datum/map/wyrm
 	allowed_spawns = list(/decl/spawnpoint/cryo, /decl/spawnpoint/cryo/two, /decl/spawnpoint/cyborg, /decl/spawnpoint/cryo/captain)
-	default_spawn = "Secondary Cryogenic Bay"
+	default_spawn = /decl/spawnpoint/cryo
 
 /decl/spawnpoint/cryo
 	name = "Secondary Cryogenic Bay"

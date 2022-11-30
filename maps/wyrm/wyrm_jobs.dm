@@ -11,6 +11,6 @@
 		/datum/job/doctor,
 		/datum/job/engineer/head,
 		/datum/job/engineer,
-		//datum/job/ai,
+//		/datum/job/ai,
 		/datum/job/cyborg
 		)

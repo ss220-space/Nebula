@@ -33,7 +33,7 @@
 
 //	default_law_type = /datum/ai_laws/manifest
 
-	num_exoplanets = 1
+	num_exoplanets = 2
 	away_site_budget = 2
 
 	starting_money = 5000
