@@ -90,7 +90,20 @@ var/global/list/decl/topic_command/topic_commands = list()
 	s["players"] = 0
 	s["stationtime"] = stationtime2text()
 	s["roundduration"] = roundduration2text()
+	s["roundtime"] = roundduration2text()
 	s["map"] = strip_improper(global.using_map.full_name) //Done to remove the non-UTF-8 text macros
+
+	switch(GAME_STATE)
+		if(RUNLEVEL_INIT)
+			s["ticker_state"] = 0
+		if(RUNLEVEL_LOBBY)
+			s["ticker_state"] = 1
+		if(RUNLEVEL_SETUP)
+			s["ticker_state"] = 2
+		if(RUNLEVEL_GAME)
+			s["ticker_state"] = 3
+		if(RUNLEVEL_POSTGAME)
+			s["ticker_state"] = 4
 
 	var/active = 0
 	var/list/players = list()
@@ -114,6 +127,8 @@ var/global/list/decl/topic_command/topic_commands = list()
 		s["adminlist"] = list2params(admins)
 		s["active_players"] = active
 
+	if(params["format"] == "json")
+		return json_encode(s)
 	return list2params(s)
 
 /decl/topic_command/manifest
@@ -359,3 +374,39 @@ var/global/list/decl/topic_command/topic_commands = list()
 	if(!global.prometheus_metrics)
 		return "Metrics not ready"
 	return global.prometheus_metrics.collect()
+
+/decl/topic_command/secure/playerlist_ext
+	name = "playerlist_ext"
+	has_params = TRUE
+
+/decl/topic_command/secure/playerlist_ext/use(var/list/params)
+	var/list/players = list()
+	var/list/just_keys = list()
+
+	var/list/disconnected_observers = list()
+
+	for(var/mob/M in global.dead_mob_list_)
+		if(!M.last_ckey)
+			continue
+		if(M.client)
+			continue
+		var/ckey = ckey(M.last_ckey)
+		disconnected_observers[ckey] = ckey
+
+	for(var/client/C as anything in global.clients)
+		var/ckey = C.ckey
+		players[ckey] = ckey
+		just_keys += ckey
+
+	for(var/mob/M in global.living_mob_list_)
+		if(!M.last_ckey)
+			continue
+		var/ckey = ckey(M.last_ckey)
+		if(players[ckey])
+			continue
+		if(disconnected_observers[ckey])
+			continue
+		players[ckey] = ckey
+		just_keys += ckey
+
+	return json_encode(just_keys)
