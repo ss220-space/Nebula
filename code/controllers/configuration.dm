@@ -953,6 +953,8 @@ var/global/list/gamemode_cache = list()
 				sqlport = value
 			if ("database")
 				sqldb = value
+			if ("utility_database")
+				sqldbutil = value
 			if ("login")
 				sqllogin = value
 			if ("password")

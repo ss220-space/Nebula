@@ -1,0 +1,1 @@
+RENAME TABLE erro_ban TO ban;
