@@ -81,6 +81,7 @@ var/global/list/gamemode_cache = list()
 	var/disable_player_mice = 0
 	var/uneducated_mice = 0 //Set to 1 to prevent newly-spawned mice from understanding human speech
 
+	var/usewhitelist_database = FALSE
 	var/usealienwhitelist = 0
 	var/usealienwhitelistSQL = 0;
 	var/limitalienplayers = 0
@@ -97,6 +98,7 @@ var/global/list/gamemode_cache = list()
 	var/discordurl
 	var/githuburl
 	var/issuereporturl
+	var/overflow_server_url
 
 	var/forbid_singulo_possession = 0
 
@@ -492,6 +494,9 @@ var/global/list/gamemode_cache = list()
 				if ("issuereporturl")
 					config.issuereporturl = value
 
+				if ("overflow_server_url")
+					config.overflow_server_url = value
+
 				if ("ghosts_can_possess_animals")
 					config.ghosts_can_possess_animals = value
 
@@ -627,6 +632,9 @@ var/global/list/gamemode_cache = list()
 
 				if("humans_need_surnames")
 					humans_need_surnames = 1
+
+				if("usewhitelist_database")
+					usewhitelist_database = TRUE
 
 				if("usealienwhitelist")
 					usealienwhitelist = 1
