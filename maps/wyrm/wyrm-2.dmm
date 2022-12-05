@@ -2077,6 +2077,9 @@
 	dir = 4
 	},
 /obj/structure/flora/pottedplant/bamboo,
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm"
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/primary/central)
 "fh" = (
@@ -3090,6 +3093,7 @@
 /obj/effect/floor_decal/corner/blue{
 	dir = 5
 	},
+/obj/machinery/network/relay/wall_mounted,
 /turf/simulated/floor/tiled/old_tile/dblue,
 /area/command/bridge)
 "hA" = (
@@ -10697,7 +10701,9 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 8
 	},
-/obj/machinery/network/relay/wall_mounted,
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm"
+	},
 /turf/simulated/floor/tiled/dark/monotile,
 /area/civilian/bar)
 "vg" = (
@@ -15282,6 +15288,10 @@
 	dir = 4;
 	icon_state = "bulb1"
 	},
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm";
+	dir = 8
+	},
 /turf/simulated/floor/tiled/old_tile,
 /area/science/rnd)
 "DM" = (
@@ -17531,12 +17541,12 @@
 "JY" = (
 /obj/item/stack/material/rods/ten,
 /turf/simulated/floor/asteroid{
-	initial_gas = list(/decl/material/gas/oxygen = 21.8366, /decl/material/gas/nitrogen = 82.1472)
+	initial_gas = list(/decl/material/gas/oxygen=21.8366,/decl/material/gas/nitrogen=82.1472)
 	},
 /area/maintenance/primary/fp)
 "Ka" = (
 /turf/simulated/floor/asteroid{
-	initial_gas = list(/decl/material/gas/oxygen = 21.8366, /decl/material/gas/nitrogen = 82.1472);
+	initial_gas = list(/decl/material/gas/oxygen=21.8366,/decl/material/gas/nitrogen=82.1472);
 	temperature = 293.15
 	},
 /area/maintenance/primary/fp)
@@ -18216,7 +18226,7 @@
 "RK" = (
 /obj/structure/inflatable/wall,
 /turf/simulated/floor/asteroid{
-	initial_gas = list(/decl/material/gas/oxygen = 21.8366, /decl/material/gas/nitrogen = 82.1472)
+	initial_gas = list(/decl/material/gas/oxygen=21.8366,/decl/material/gas/nitrogen=82.1472)
 	},
 /area/maintenance/primary/fp)
 "RS" = (
@@ -18548,7 +18558,7 @@
 /area/supply/external)
 "Vf" = (
 /turf/simulated/floor/asteroid{
-	initial_gas = list(/decl/material/gas/oxygen = 21.8366, /decl/material/gas/nitrogen = 82.1472)
+	initial_gas = list(/decl/material/gas/oxygen=21.8366,/decl/material/gas/nitrogen=82.1472)
 	},
 /area/maintenance/primary/fp)
 "Vg" = (

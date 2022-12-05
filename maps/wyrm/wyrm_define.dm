@@ -4,6 +4,7 @@
 	path = "wyrm"
 	ground_noun = "deck"
 
+	overmap_ids = list(OVERMAP_ID_SPACE)
 //	lobby_icon = 'maps/torch/icons/lobby.dmi'
 
 	station_levels = list(1,2)

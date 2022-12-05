@@ -2742,6 +2742,9 @@
 /area/engineering/techstorage)
 "ge" = (
 /obj/machinery/ftl_shunt/fuel_port,
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm"
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/techstorage)
 "gf" = (
@@ -9105,12 +9108,11 @@
 /area/engineering/tcomms)
 "rW" = (
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/machinery/network/relay{
+/obj/machinery/network/relay/long_range{
 	initial_network_id = "wyrm";
-	light_color = "#4b734b";
-	light_power = 0.6;
 	light_range = 4;
-	produces_heat = 1
+	light_power = 0.6;
+	light_color = "#4b734b"
 	},
 /turf/simulated/floor/tiled/white/monotile,
 /area/engineering/tcomms)
@@ -10193,6 +10195,10 @@
 "uX" = (
 /obj/machinery/fabricator/book/filled,
 /obj/structure/table/woodentable/walnut,
+/obj/machinery/network/relay/wall_mounted{
+	dir = 4;
+	initial_network_id = "wyrm"
+	},
 /turf/simulated/floor/carpet,
 /area/civilian/lounge)
 "vb" = (
@@ -11714,6 +11720,9 @@
 /area/supply/external)
 "Jp" = (
 /obj/machinery/computer/ship/disperser,
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm"
+	},
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/supply/bsa)
 "Jv" = (
@@ -12410,6 +12419,19 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/reinforced/airless,
 /area/supply/external)
+"SD" = (
+/obj/effect/floor_decal/corner/purple{
+	dir = 6
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4;
+	icon_state = "warning"
+	},
+/obj/machinery/network/relay/wall_mounted{
+	initial_network_id = "wyrm"
+	},
+/turf/simulated/floor/tiled/white,
+/area/science/xenoflora)
 "SE" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5;
@@ -12791,11 +12813,11 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
 	id_tag = "cargo_dock";
-	pixel_x = 26;
 	tag_airpump = "cargo_dock_vent";
 	tag_chamber_sensor = "cargo_dock_sensor";
 	tag_exterior_door = "cargo_dock_exterior";
-	tag_interior_door = "cargo_dock_interior"
+	tag_interior_door = "cargo_dock_interior";
+	pixel_x = 24
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 6;
@@ -49953,7 +49975,7 @@ Nw
 ZJ
 TT
 Qo
-nC
+SD
 nC
 pK
 qJ
