@@ -149,6 +149,33 @@
 	else
 		return ..()
 
+/obj/item/GetCloneArgs()
+	. = ..()
+	LAZYADD(., material?.type)
+
+//#TODO: Implement this for all the sub class that need it
+/obj/item/PopulateClone(obj/item/clone)
+	clone = ..()
+	clone.contaminated = contaminated
+	clone.blood_overlay = image(blood_overlay)
+
+	clone.health = health
+	//#TODO: once item damage in, check health!
+
+	//Coating
+	clone.coating = coating?.Clone()
+	if(clone.coating)
+		clone.coating.set_holder(clone)
+	return clone
+
+//Run some updates
+/obj/item/Clone()
+	var/obj/item/clone = ..()
+	if(clone)
+		clone.update_icon()
+		clone.update_held_icon()
+	return clone
+
 //Checks if the item is being held by a mob, and if so, updates the held icons
 /obj/item/proc/update_twohanding()
 	update_held_icon()
