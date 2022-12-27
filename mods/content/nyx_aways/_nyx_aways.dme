@@ -1,0 +1,8 @@
+#ifndef MODPACK_NYX
+#define MODPACK_NYX
+#include "_nyx_aways.dm"
+#include "aesthetics.dm"
+#include "clothing.dm"
+#include "effects.dm"
+#include "presets.dm"
+#endif
