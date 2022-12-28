@@ -49,3 +49,16 @@
 	return "You're an unfortunate victim of the <i>ISC Wyrm</i>. Previously serving as a privately contracted exploration vessel before the Galactic Conflict, the ship is now a one-of-a-kind pinnacle of improvisational engineering. \
 			Barely structurally sound and written off as a loss to the uncharted systems, what the future holds for the ship and her eclectic crew is known only by those who move it forward."
 
+/datum/map/wyrm/create_trade_hubs()
+	new /datum/trade_hub/singleton/wyrm
+
+/datum/trade_hub/singleton/wyrm
+	name = "Wyrm trade Network"
+
+/datum/trade_hub/singleton/wyrm/get_initial_traders()
+	return list(
+		/datum/trader/xeno_shop,
+		/datum/trader/medical,
+		/datum/trader/mining,
+		/datum/trader/books
+	)

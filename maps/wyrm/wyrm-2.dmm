@@ -5414,6 +5414,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/machinery/merchant_pad,
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/logistics/storage)
 "lS" = (
@@ -7281,6 +7282,9 @@
 /obj/item/radio/intercom{
 	dir = 8;
 	pixel_x = 23
+	},
+/obj/machinery/computer/modular/preset/merchant/wyrm{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/old_tile/hallway,
 /area/logistics/storage)
