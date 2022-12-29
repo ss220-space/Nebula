@@ -38,7 +38,7 @@
 /obj/machinery/vending/wallmed2
 	markup = 0
 
-/obj/machinery/vending/robotics 
+/obj/machinery/vending/robotics
 	markup = 0
 
 /datum/computer_file/program/supermatter_monitor
@@ -75,5 +75,14 @@
 		/datum/computer_file/program/records,
 		/datum/computer_file/program/docking,
 		/datum/computer_file/program/records,
+		/datum/computer_file/program/wordprocessor
+	)
+/datum/computer_file/program/merchant/wyrm
+	read_access = list()
+
+/obj/machinery/computer/modular/preset/merchant/wyrm
+	default_software = list(
+		/datum/computer_file/program/merchant/wyrm,
+		/datum/computer_file/program/email_client,
 		/datum/computer_file/program/wordprocessor
 	)
